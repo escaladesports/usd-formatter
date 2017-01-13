@@ -1,0 +1,11 @@
+{
+  "name": "usd-formatter",
+  "version": "0.0.0",
+  "description": "Formats numbers to a USD string.",
+  "main": "index.js",
+  "scripts": {
+  	"test": "node test"
+  },
+  "author": "Kennedy Rose <krose@escaladesports.com> (https://escaladesports.com)",
+  "license": "MIT"
+}
