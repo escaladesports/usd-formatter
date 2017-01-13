@@ -3,10 +3,10 @@
 'use strict'
 
 const defaults = {
-	prepend: '$',
-	delimiter: ',',
-	delimiterSize: 3,
-	decimal: 2,
+	prepend: '$',	
+	thousandsSize: 3,
+	thousandsDelimiter: ',',
+	decimalSize: 2,
 	decimalDelimiter: '.'
 }
 
@@ -24,12 +24,12 @@ module.exports = function(n, opt){
 	}
 
 	// Create regexp
-	let re = '\\d(?=(\\d{' + (opt.delimiterSize || 3) + '})+' + (opt.decimal > 0 ? '\\D' : '$') + ')'
+	let re = '\\d(?=(\\d{' + (opt.thousandsSize || 3) + '})+' + (opt.decimal > 0 ? '\\D' : '$') + ')'
 	re = new RegExp(re, 'g')
 
 	// Create number
 	let num = n.toFixed(Math.max(0, ~~opt.decimal))
-	num = (opt.decimalDelimiter ? num.replace('.', opt.decimalDelimiter) : num).replace(re, '$&' + (opt.delimiter || ','))
+	num = (opt.decimalDelimiter ? num.replace('.', opt.decimalDelimiter) : num).replace(re, '$&' + (opt.thousandsDelimiter || ','))
 
 	// Currency unit
 	if(opt.prepend) num = opt.prepend + num
