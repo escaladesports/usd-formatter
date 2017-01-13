@@ -6,6 +6,17 @@
   "scripts": {
     "test": "node test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/escaladesports/usd-formatter.git"
+  },
+  "keywords": [
+    "usd",
+    "dollar",
+    "format",
+    "currency",
+    "money"
+  ],
   "author": "Kennedy Rose <krose@escaladesports.com> (https://escaladesports.com)",
   "license": "MIT"
 }
