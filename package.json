@@ -1,6 +1,6 @@
 {
   "name": "usd-formatter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lightweight number to currency formatter.",
   "main": "index.js",
   "scripts": {
