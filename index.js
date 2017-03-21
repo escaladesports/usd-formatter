@@ -24,11 +24,11 @@ module.exports = function(n, opt){
 	}
 
 	// Create regexp
-	let re = '\\d(?=(\\d{' + (opt.thousandsSize || 3) + '})+' + (opt.decimal > 0 ? '\\D' : '$') + ')'
+	let re = '\\d(?=(\\d{' + (opt.thousandsSize || 3) + '})+' + (opt.decimalSize > 0 ? '\\D' : '$') + ')'
 	re = new RegExp(re, 'g')
 
 	// Create number
-	let num = n.toFixed(Math.max(0, ~~opt.decimal))
+	let num = n.toFixed(Math.max(0, ~~opt.decimalSize))
 	num = (opt.decimalDelimiter ? num.replace('.', opt.decimalDelimiter) : num).replace(re, '$&' + (opt.thousandsDelimiter || ','))
 
 	// Currency unit
