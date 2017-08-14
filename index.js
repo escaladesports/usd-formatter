@@ -2,7 +2,7 @@
 
 'use strict'
 
-const defaults = {
+var defaults = {
 	prepend: '$',	
 	thousandsSize: 3,
 	thousandsDelimiter: ',',
@@ -13,7 +13,7 @@ const defaults = {
 module.exports = function(n, opt){
 	// Get options
 	if(opt){
-		for(let i in defaults){
+		for(var i in defaults){
 			if(!(i in opt)){
 				opt[i] = defaults[i]
 			}
@@ -24,11 +24,11 @@ module.exports = function(n, opt){
 	}
 
 	// Create regexp
-	let re = '\\d(?=(\\d{' + (opt.thousandsSize || 3) + '})+' + (opt.decimalSize > 0 ? '\\D' : '$') + ')'
+	var re = '\\d(?=(\\d{' + (opt.thousandsSize || 3) + '})+' + (opt.decimalSize > 0 ? '\\D' : '$') + ')'
 	re = new RegExp(re, 'g')
 
 	// Create number
-	let num = n.toFixed(Math.max(0, ~~opt.decimalSize))
+	var num = n.toFixed(Math.max(0, ~~opt.decimalSize))
 	num = (opt.decimalDelimiter ? num.replace('.', opt.decimalDelimiter) : num).replace(re, '$&' + (opt.thousandsDelimiter || ','))
 
 	// Currency unit
