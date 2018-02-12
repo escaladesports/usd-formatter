@@ -1,6 +1,6 @@
 # USD Formatter
 
-Lightweight number to currency formatter.
+Lightweight number to currency formatter. Accepts any kind of string or number and formats it to a USD string.
 
 ## Installation
 
@@ -25,10 +25,6 @@ The following options can be passed for the second argument.
 
 ```
 formatter(12345678.9, {
-	prepend: '$',	
-	thousandsSize: 3,
-	thousandsDelimiter: ',',
-	decimalSize: 2,
-	decimalDelimiter: '.'
+	prepend: '$',
 })
 ```
