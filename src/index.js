@@ -17,8 +17,7 @@ export default function(unformatted, options){
 		price = Number(price)
 	}
 
-	price = price.toFixed(options.decimalSize)
-	price = numToUsd(price)
+	price = numToUsd(price, true)
 	if(options.prepend){
 		price = `$${price}`
 	}
