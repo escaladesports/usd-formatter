@@ -7,26 +7,20 @@ logs
 npm-debug.log*
 
 # Dependency directories
-node_modules/
+node_modules
+dev
+test
 
 # Development/Environment
 .env
-.env.*
-dist
 .next
 json
-public
-.cache
-envdotjs-key
-env.js
-.serverless
-dist-es6
-dist-browser
-dist-es5
-dist-modules
-_optimize
-.babelrc
+static
+docs/build/
+coverage/
+.eslintcache
 .postcssrc
+src
 
 # Temporary
 temp
